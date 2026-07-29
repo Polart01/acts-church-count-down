@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Carry the Flame — Acts Church</title>
+<meta name="description" content="Carry the Flame — Acts Church Soshanguve">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient background layers -->
+  <div class="bg-layer bg-vignette"></div>
+  <div class="bg-layer bg-grain"></div>
+  <div class="bg-layer bg-smoke" id="smokeLayer"></div>
+  <canvas id="emberCanvas" class="bg-layer"></canvas>
+
+  <main class="page">
+
+    <header class="church-mark">
+      <span class="church-mark__line"></span>
+      <span class="church-mark__text">ACTS CHURCH</span>
+      <span class="church-mark__line"></span>
+    </header>
+
+    <section class="hero" id="hero">
+      <h1 class="hero__title">
+        <span class="hero__title-line">CARRY</span>
+        <span class="hero__title-line hero__title-line--accent">THE FLAME</span>
+      </h1>
+
+      <div class="countdown" id="countdown" role="timer" aria-live="polite">
+        <div class="countdown__grid" id="countdownGrid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <div class="countdown__zero" id="countdownZero" hidden>
+        <div class="zero-fire"></div>
+        <p class="zero-text">THE TIME IS NOW</p>
+      </div>
+
+      <p class="hero__eyebrow" id="heroEyebrow">The countdown begins</p>
+    </section>
+
+    <!-- ACTUAL EVENT POSTER (Use the supplied file at /assets/carry-the-flame-poster.jpeg) -->
+    <section class="poster-section" aria-labelledby="posterLabel">
+      <div class="poster-card">
+        <button id="eventPosterButton" class="poster-button" aria-haspopup="dialog" aria-controls="posterLightbox" aria-label="View event poster">
+          <img id="eventPoster" class="poster-img" src="assets/carry-the-flame-poster.jpeg" alt="ACTS Church Carry the Flame Conference poster" loading="lazy">
+        </button>
+    </section>
+
+    <section class="event-info" id="eventInfo">
+      <div class="event-info__divider" aria-hidden="true"></div>
+
+      <div class="event-info__row" id="eventDateRow">
+        <span class="event-info__date">29 – 30 JULY</span>
+        <span class="event-info__dot" aria-hidden="true">•</span>
+        <span class="event-info__time">6:30PM</span>
+      </div>
+
+      <p class="event-info__label" id="eventNightLabel">ANOINTING FRIDAY</p>
+
+      <div class="event-info__row event-info__row--secondary" id="eventDateRow2">
+        <span class="event-info__date">31 JULY</span>
+        <span class="event-info__dot" aria-hidden="true">•</span>
+        <span class="event-info__time">6:30PM</span>
+      </div>
+
+      <p class="event-info__venue" id="eventVenue">SOSHANGUVE CAMPUS</p>
+      <p class="event-info__map-link">
+        <a href="https://www.google.com/maps/search/?api=1&query=6654%20Lindelani%20Street%2C%20Soshanguve%20-%20GG%2C%20Soshanguve%2C%200152" target="_blank" rel="noopener noreferrer">
+          6654 Lindelani Street, Soshanguve - GG, Soshanguve, 0152
+        </a>
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      <span id="footerChurchName">ACTS CHURCH</span>
+    </footer>
+
+  </main>
+
+  <!-- Poster lightbox (hidden by default) -->
+  <div id="posterLightbox" class="poster-lightbox" hidden>
+    <div class="poster-lightbox__backdrop" data-dismiss></div>
+    <div class="poster-lightbox__content" role="dialog" aria-modal="true" aria-label="Event poster">
+      <button class="poster-lightbox__close" aria-label="Close poster">✕</button>
+      <img src="assets/carry-the-flame-poster.jpeg" alt="ACTS Church Carry the Flame Conference poster" loading="lazy">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
